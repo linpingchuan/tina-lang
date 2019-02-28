@@ -6,16 +6,6 @@ find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
-set(CMAKE_CXX_STANDARD 17)
-
-# Set your project compile flags.
-# E.g. if using the C++ header files
-# you will need to enable C++11 support
-# for your compiler.
-
-include_directories(${LLVM_INCLUDE_DIRS})
-add_definitions(${LLVM_DEFINITIONS})
-
 include(CTest)
 
 if (CMAKE_VERSION VERSION_LESS 3.2)
@@ -47,6 +37,15 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
             "${gmock_SOURCE_DIR}/include")
 endif()
 
+set(CMAKE_CXX_STANDARD 17)
+
+# Set your project compile flags.
+# E.g. if using the C++ header files
+# you will need to enable C++11 support
+# for your compiler.
+
+include_directories(${LLVM_INCLUDE_DIRS})
+add_definitions(${LLVM_DEFINITIONS})
 
 add_executable(tina-lang main.cpp include/ast.h include/parser.h)
 # Find the libraries that correspond to the LLVM components

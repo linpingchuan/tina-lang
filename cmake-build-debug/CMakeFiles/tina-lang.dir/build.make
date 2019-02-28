@@ -93,6 +93,7 @@ tina-lang: CMakeFiles/tina-lang.dir/build.make
 tina-lang: /home/lin/llvm-build/lib/libLLVMSupport.a
 tina-lang: /home/lin/llvm-build/lib/libLLVMCore.a
 tina-lang: /home/lin/llvm-build/lib/libLLVMIRReader.a
+tina-lang: /home/lin/llvm-build/lib/libgtest.a
 tina-lang: /home/lin/llvm-build/lib/libLLVMAsmParser.a
 tina-lang: /home/lin/llvm-build/lib/libLLVMBitReader.a
 tina-lang: /home/lin/llvm-build/lib/libLLVMCore.a

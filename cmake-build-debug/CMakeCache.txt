@@ -318,25 +318,25 @@ SLURM_SRUN_COMMAND:FILEPATH=SLURM_SRUN_COMMAND-NOTFOUND
 SVNCOMMAND:FILEPATH=SVNCOMMAND-NOTFOUND
 
 //Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-build/googlemock
+gmock_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock
 
 //Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googlemock
+gmock_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googlemock
 
 //Build all of Google Mock's own tests.
 gmock_build_tests:BOOL=OFF
 
 //Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-build
+googletest-distribution_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build
 
 //Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src
+googletest-distribution_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-build/googlemock/gtest
+gtest_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock/gtest
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest
+gtest_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googletest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF
@@ -389,8 +389,6 @@ CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 CMAKE_COMMAND:INTERNAL=/opt/clion-2017.3.1/bin/cmake/bin/cmake
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=/opt/clion-2017.3.1/bin/cmake/bin/cpack
-//ADVANCED property for variable: CMAKE_CTEST_COMMAND
-CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/opt/clion-2017.3.1/bin/cmake/bin/ctest
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
@@ -517,7 +515,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -606,7 +604,7 @@ SLURM_SRUN_COMMAND-ADVANCED:INTERNAL=1
 SVNCOMMAND-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-generated_dir:INTERNAL=/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-build/googlemock/gtest/generated
+generated_dir:INTERNAL=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock/gtest/generated
 //ADVANCED property for variable: gtest_build_samples
 gtest_build_samples-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_tests
