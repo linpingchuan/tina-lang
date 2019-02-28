@@ -1,6 +1,47 @@
 /opt/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lin/CLionProjects/tina-lang
 -- Found LLVM 5.0.2
 -- Using LLVMConfig.cmake in: /home/lin/llvm-build/lib/cmake/llvm
+-- Downloading/updating googletest
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/lin/CLionProjects/tina-lang/cmake-build-debug
+-- Build files have been written to: /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download
+Scanning dependencies of target googletest-download
+[ 11%] Skipping update step for 'googletest-download'
+[ 22%] No configure step for 'googletest-download'
+[ 33%] No build step for 'googletest-download'
+[ 44%] No install step for 'googletest-download'
+[ 55%] No test step for 'googletest-download'
+[ 66%] Completed 'googletest-download'
+[100%] Built target googletest-download
+CMake Error at cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/cmake/internal_utils.cmake:145 (add_library):
+  add_library cannot create target "gtest" because an imported target with
+  the same name already exists.
+Call Stack (most recent call first):
+  cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/cmake/internal_utils.cmake:197 (cxx_library_with_type)
+  cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/CMakeLists.txt:125 (cxx_library)
+
+
+CMake Error at cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/cmake/internal_utils.cmake:145 (add_library):
+  add_library cannot create target "gtest_main" because an imported target
+  with the same name already exists.
+Call Stack (most recent call first):
+  cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/cmake/internal_utils.cmake:197 (cxx_library_with_type)
+  cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/CMakeLists.txt:126 (cxx_library)
+
+
+CMake Error at cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/CMakeLists.txt:131 (target_include_directories):
+  Cannot specify include directories for imported target "gtest".
+
+
+CMake Error at cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/CMakeLists.txt:134 (target_include_directories):
+  Cannot specify include directories for imported target "gtest_main".
+
+
+CMake Error at cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-src/googletest/CMakeLists.txt:138 (target_link_libraries):
+  Cannot specify link libraries for target "gtest_main" which is not built by
+  this project.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeError.log".

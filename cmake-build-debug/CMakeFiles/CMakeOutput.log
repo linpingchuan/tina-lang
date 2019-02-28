@@ -631,3 +631,31 @@ make[1]: Leaving directory '/home/lin/CLionProjects/tina-lang/cmake-build-debug/
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4f0d3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4f0d3.dir/build.make CMakeFiles/cmTC_4f0d3.dir/build
+make[1]: Entering directory '/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f0d3.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4f0d3.dir/CheckIncludeFile.c.o   -c /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4f0d3
+/opt/clion-2017.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f0d3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4f0d3.dir/CheckIncludeFile.c.o  -o cmTC_4f0d3 
+make[1]: Leaving directory '/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f0a36/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f0a36.dir/build.make CMakeFiles/cmTC_f0a36.dir/build
+make[1]: Entering directory '/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f0a36.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f0a36.dir/CheckFunctionExists.c.o   -c /opt/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f0a36
+/opt/clion-2017.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0a36.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f0a36.dir/CheckFunctionExists.c.o  -o cmTC_f0a36 -lpthread 
+make[1]: Leaving directory '/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
