@@ -4,6 +4,7 @@
 #include "llvm/IR/Module.h"
 #include "llvm/IR/IRBuilder.h"
 #include <iostream>
+#include "include/parser.h"
 
 static llvm::LLVMContext TheContext;
 static llvm::IRBuilder<> Builder(TheContext);

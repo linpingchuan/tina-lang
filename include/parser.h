@@ -17,6 +17,7 @@ static int gettok() {
 // getNextToken 是读取当前语法分析器的token，并且根据语法分析器获得结果更新CurTok
 static int CurTok;
 static double NumVal;
+static std::string IdentifierStr;
 
 static int getNextToken() {
     return CurTok = gettok();
@@ -47,6 +48,9 @@ static ExprAst *ParseNumberExpr() {
 
 // 解析表达式
 static ExprAst *ParseExpression() {
+    if (CurTok == '(') {
+        ExprAst *parenExpr = ParseExpression();
+    }
     return nullptr;
 }
 
@@ -68,6 +72,84 @@ static ExprAst *ParseParenExpr() {
     }
     getNextToken();
     return V;
+}
+
+// 处理变量的引用和函数的调用
+// 此处采用预读的风格来试探当前标识符的类型，来判断他是不是变量还是函数调用
+static ExprAst *ParseIdentifierExpr() {
+    std::string IdName = IdentifierStr;
+
+    getNextToken(); // 获取函数的标识符
+
+    if (CurTok != '(') {
+        // 如果不是 ( ，那么为简单的函数声明
+        return new VariableExprAst(IdName);
+    }
+
+    // 调用
+    getNextToken(); // 丢掉 (
+    std::vector<ExprAst *> Args;
+    if (CurTok != ')') {
+        while (true) {
+            ExprAst *Arg = ParseExpression();
+            if (!Arg) {
+                return nullptr;
+            }
+            Args.push_back(Arg);
+
+            if (CurTok == ')') {
+                break;
+            }
+
+            if (CurTok != ',') {
+                return Error("Expected ')' or ',' in argument list");
+            }
+            // 丢掉 ,
+            getNextToken();
+        }
+    }
+
+}
+
+// 辅助函数，解析主表达式入口
+static ExprAst *ParsePrimary() {
+    switch (CurTok) {
+        default:
+            return Error("unknown token where expecting an expression");
+//        case tok_identifier:
+//            return ParseIdentifierExpr();
+//        case tok_number:
+//            return ParseNumberExpr();
+        case '(':
+            return ParseParenExpr();
+    }
+}
+
+// 解析二元表达式
+
+// 存储二元运算符的优先级
+static std::map<char, int> BinopPrecedence;
+
+// 获取二元运算符的优先级
+static int GetTokPrecedence() {
+    if (!isascii(CurTok)) {
+        return -1;
+    }
+    // 确保为已声明的二元运算符
+    int TokPrec = BinopPrecedence[CurTok];
+    if (TokPrec <= 0) {
+        return -1;
+    }
+    return TokPrec;
+}
+
+// 初始化二元运算符的优先级
+// 1 是对小的优先级，数值越大，优先级越高
+static void InitTokPrecedence() {
+    BinopPrecedence['<'] = 10;
+    BinopPrecedence['+'] = 20;
+    BinopPrecedence['-'] = 20;
+    BinopPrecedence['*'] = 40;
 }
 
 #endif //TINA_LANG_PARSER_H
