@@ -13,6 +13,9 @@
 
 > 没错，我就是这么无聊。你没事也可以来喷我的 CPP 代码，因为我是 Java 程序员出身，掀桌！
 
+## 相关文档
+- [如何将你的LLVM嵌入到你的项目中](./doc/llvm/how_embedding_LLVM_to_your_project.md)
+
 ## [TODO] 具体脚本语法....
 
 ## [TODO]具体案例未知...
