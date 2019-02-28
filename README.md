@@ -24,6 +24,8 @@
 - 支付宝账号: paul_lin@foxmail.com
 
 ![paul_lin@foxmail.com](./doc/paul_lin@foxmail.com.jpg)
+
+
 我还提供了一个二维码方便你转账....
 
 
