@@ -22,6 +22,7 @@
 
 ## 捐赠（也好尬，代码都没写出来，就想让人捐赠）
 - 支付宝账号: paul_lin@foxmail.com
+
 ![paul_lin@foxmail.com](./doc/paul_lin@foxmail.com.jpg)
 我还提供了一个二维码方便你转账....
 
