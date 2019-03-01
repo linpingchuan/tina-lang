@@ -6,6 +6,7 @@
 #define TINA_LANG_PARSER_H
 
 #include "ast.h"
+#include <ctype.h>
 
 // 解析表达式 声明
 static ExprAst *ParseExpression();
@@ -38,8 +39,53 @@ enum Token {
             tok_identifier = -4, tok_number = -5
 };
 
+// 获取下一个token
 static int gettok() {
-    return -1;
+    static int LastChar = ' ';
+    // 跳过空格
+    while (isspace(LastChar)) {
+        LastChar = getchar();
+    }
+    // 判断是是否是变量
+    if (isalpha(LastChar)) {
+        IdentifierStr = LastChar;
+        while (isalnum(LastChar = getchar())) {
+            IdentifierStr += LastChar;
+        }
+        if (IdentifierStr == "def") {
+            return tok_def;
+        }
+        if (IdentifierStr == "extern") {
+            return tok_extern;
+        }
+        return tok_identifier;
+    }
+    // 判断是否为数值型变量
+    if (isdigit(LastChar) || LastChar == '.') {
+        std::string NumStr;
+        do {
+            NumStr += LastChar;
+            LastChar = getchar();
+        } while (isdigit(LastChar) || LastChar == '.');
+        NumVal = strtod(NumStr.c_str(), 0);
+        return tok_number;
+    }
+    // 判断是否为注释
+    if (LastChar == '#') {
+        do LastChar = getchar();
+        while (LastChar != EOF && LastChar != '\n' && LastChar != '\r');
+        if (LastChar != EOF) {
+            return gettok();
+        }
+    }
+    // 检查是否到了文件末尾，不丢掉EOF
+    if (LastChar == EOF) {
+        return tok_eof;
+    }
+    // 如果不是以上的情形
+    int ThisChar = LastChar;
+    LastChar = getchar();
+    return ThisChar;
 }
 
 static int getNextToken() {
@@ -92,6 +138,8 @@ static ExprAst *ParseParenExpr() {
 
 // 处理变量的引用和函数的调用
 // 此处采用预读的风格来试探当前标识符的类型，来判断他是不是变量还是函数调用
+// ::= identifier
+// ::= identifier '(' expression* ')'
 static ExprAst *ParseIdentifierExpr() {
     std::string IdName = IdentifierStr;
 
@@ -124,7 +172,9 @@ static ExprAst *ParseIdentifierExpr() {
             getNextToken();
         }
     }
-
+    // Eat the ')'
+    getNextToken();
+    return new CallExprAst(IdName, Args);
 }
 
 // 辅助函数，解析主表达式入口
