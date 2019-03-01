@@ -1,4 +1,4 @@
-if("master" STREQUAL "")
+if("release-1.8.0" STREQUAL "")
   message(FATAL_ERROR "Tag for git checkout should not be empty.")
 endif()
 
@@ -67,12 +67,12 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/usr/bin/git" ${git_options} checkout master --
+  COMMAND "/usr/bin/git" ${git_options} checkout release-1.8.0 --
   WORKING_DIRECTORY "/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: 'master'")
+  message(FATAL_ERROR "Failed to checkout tag: 'release-1.8.0'")
 endif()
 
 execute_process(

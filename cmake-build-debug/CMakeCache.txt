@@ -17,6 +17,12 @@
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
+//Builds the googletest subproject
+BUILD_GTEST:BOOL=OFF
+
+//Build shared libraries (DLLs).
+BUILD_SHARED_LIBS:BOOL=OFF
+
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
 
@@ -239,6 +245,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
+CMAKE_SUPPRESS_DEVELOPER_WARNINGS:BOOL=1
+
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -318,7 +326,7 @@ SLURM_SRUN_COMMAND:FILEPATH=SLURM_SRUN_COMMAND-NOTFOUND
 SVNCOMMAND:FILEPATH=SVNCOMMAND-NOTFOUND
 
 //Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock
+gmock_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googlemock
 
 //Value Computed by CMake
 gmock_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googlemock
@@ -327,13 +335,13 @@ gmock_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/goog
 gmock_build_tests:BOOL=OFF
 
 //Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build
+googletest-distribution_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src
 
 //Value Computed by CMake
 googletest-distribution_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock/gtest
+gtest_BINARY_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googlemock/gtest
 
 //Value Computed by CMake
 gtest_SOURCE_DIR:STATIC=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googletest
@@ -604,7 +612,7 @@ SLURM_SRUN_COMMAND-ADVANCED:INTERNAL=1
 SVNCOMMAND-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-generated_dir:INTERNAL=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-build/googlemock/gtest/generated
+generated_dir:INTERNAL=/home/lin/CLionProjects/tina-lang/cmake-build-debug/googletest-src/googlemock/gtest/generated
 //ADVANCED property for variable: gtest_build_samples
 gtest_build_samples-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_tests
