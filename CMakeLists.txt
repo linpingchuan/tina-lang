@@ -20,7 +20,7 @@ message(STATUS "工程源代码路径: ${PROJECT_SOURCE_DIR}")
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_executable(tina-lang main.cpp)
+add_executable(tina-lang main.cpp include/ast.h include/parser.h)
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
 llvm_map_components_to_libnames(llvm_libs support core irreader)

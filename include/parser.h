@@ -7,6 +7,9 @@
 
 #include "ast.h"
 
+// 解析表达式 声明
+static ExprAst *ParseExpression();
+
 static int gettok() {
     return -1;
 }
@@ -46,13 +49,6 @@ static ExprAst *ParseNumberExpr() {
     return Result;
 }
 
-// 解析表达式
-static ExprAst *ParseExpression() {
-    if (CurTok == '(') {
-        ExprAst *parenExpr = ParseExpression();
-    }
-    return nullptr;
-}
 
 // 解析括号运算符
 // 该函数的特点:
@@ -151,5 +147,39 @@ static void InitTokPrecedence() {
     BinopPrecedence['-'] = 20;
     BinopPrecedence['*'] = 40;
 }
+
+// 解析有序对列表
+// RHS -> right hand side
+static ExprAst *ParseBinOpRHS(int ExprPrec,ExprAst *LHS){
+    while(true){
+        // 如果是二元操作符，找出他的优先级
+        int TokPrec=GetTokPrecedence();
+
+        //
+        if(TokPrec<ExprPrec){
+            return LHS;
+        }
+
+        int BinOp=CurTok;
+        getNextToken(); // 丢掉二元操作符
+
+        // 解析表达式
+        ExprAst *RHS=ParsePrimary();
+        if(!RHS){
+            return nullptr;
+        }
+    }
+}
+
+// 解析表达式
+static ExprAst *ParseExpression(){
+    ExprAst *LHS=ParsePrimary();
+    if(!LHS){
+        return nullptr;
+    }
+    return ParseBinOpRHS(0,LHS);
+}
+
+
 
 #endif //TINA_LANG_PARSER_H

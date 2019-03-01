@@ -1,6 +1,7 @@
 # tina-lang
 
 > 采用 LLVM 作为编译器后端，后续会为 LLVM 写编译器插件
+
 > 有任何问题，请联系我 paul_lin@foxmail.com
 
 ## 这个有啥用啊
