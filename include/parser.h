@@ -23,6 +23,18 @@ static ExprAst *ParseNumberExpr();
 // 解析函数定义 声明
 static FunctionAst *ParseDefinition();
 
+// 处理定义
+static void HandleDefinition();
+
+// 处理extern
+static void HandleExtern();
+
+// 处理顶层表达式
+static void HandleTopLevelExpression();
+
+// 主循环
+static void MainLoop();
+
 // 辅助函数
 // 简单提供一个 token 缓冲区
 // CurTok 是当前语法解析器正在寻找的token
@@ -328,4 +340,70 @@ static FunctionAst *ParseTopLevelExpr() {
     return nullptr;
 }
 
+static void HandleDefinition() {
+    if (ParseDefinition()) {
+        fprintf(stderr, "Parsed a function definition.\n");
+    } else {
+        // 容错机制
+        getNextToken();
+    }
+}
+
+static void HandleExtern() {
+    if (ParseExtern()) {
+        fprintf(stderr, "Parsed an extern\n");
+    } else {
+        // 容错机制
+        getNextToken();
+    }
+}
+
+static void HandleTopLevelExpression() {
+    if (ParseTopLevelExpr()) {
+        fprintf(stderr, "Parsed a top-level expr\n");
+    } else {
+        getNextToken();
+    }
+}
+
+// 主循环
+static void MainLoop() {
+    while (true) {
+        fprintf(stderr, "ready> ");
+        switch (CurTok) {
+            case tok_eof:
+                return;
+            case ';':
+                getNextToken();
+                break;
+            case tok_def:
+                HandleDefinition();
+                break;
+            case tok_extern:
+                HandleExtern();
+                break;
+            default:
+                HandleTopLevelExpression();
+        }
+    }
+}
+
+// main driver code
+static int start_drive(){
+    // Install standard binary operators.
+    // 1 is lowest precedence.
+    BinopPrecedence['<'] = 10;
+    BinopPrecedence['+'] = 20;
+    BinopPrecedence['-'] = 20;
+    BinopPrecedence['*'] = 40;  // highest.
+
+    // Prime the first token.
+    fprintf(stderr, "ready> ");
+    getNextToken();
+
+    // Run the main "interpreter loop" now.
+    MainLoop();
+
+    return 0;
+}
 #endif //TINA_LANG_PARSER_H
