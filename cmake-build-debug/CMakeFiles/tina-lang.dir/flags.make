@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -DLLVM_BUILD_GLOBAL_ISEL -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTA
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lin/llvm/include -I/home/lin/llvm-build/include 
+CXX_INCLUDES = -I/home/lin/llvm/include -I/home/lin/llvm-build/include -I/home/lin/CLionProjects/tina-lang/include 
 

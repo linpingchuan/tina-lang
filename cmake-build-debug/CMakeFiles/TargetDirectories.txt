@@ -1,3 +1,4 @@
 /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/test.dir
 /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/lin/CLionProjects/tina-lang/cmake-build-debug/CMakeFiles/tina-lang.dir

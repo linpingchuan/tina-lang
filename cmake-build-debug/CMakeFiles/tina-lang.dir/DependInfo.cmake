@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/lin/llvm/include"
   "/home/lin/llvm-build/include"
+  "../include"
   )
 
 # Targets to which this target links.

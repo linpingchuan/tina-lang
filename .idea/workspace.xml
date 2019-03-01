@@ -12,51 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab488a4-2644-467e-876b-42d60f34b0ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeCache.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/3.9.6/CMakeSystem.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/CMakeOutput.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/CMakeRuleHashes.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/Makefile.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/Makefile2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/Progress/3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/Progress/4" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/Progress/count.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/TargetDirectories.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/cmake.check_cache" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/DependInfo.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/Labels.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/Labels.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/build.make" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/cmake_clean.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/depend.internal" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/depend.make" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/googletest-download.dir/progress.make" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeFiles/progress.marks" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/CMakeLists.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/Makefile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/cmake_install.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-gitinfo.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-mkdir" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/tmp/googletest-download-cfgcmd.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/tmp/googletest-download-cfgcmd.txt.in" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/tmp/googletest-download-gitclone.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMAKE_SOURCE_DIR/third_parts/googletest/googletest-download/googletest-download-prefix/tmp/googletest-download-gitupdate.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/tina-lang.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/tina-lang.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/tina-lang.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/tina-lang.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-build/googlemock/gtest/generated/GTestConfig.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-build/googlemock/gtest/generated/GTestConfigVersion.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeFiles/Makefile.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeLists.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-download/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-download/googletest-download-prefix/tmp/googletest-download-gitclone.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-download/googletest-download-prefix/tmp/googletest-download-gitclone.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-download/googletest-download-prefix/tmp/googletest-download-gitupdate.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-download/googletest-download-prefix/tmp/googletest-download-gitupdate.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/googletest-src" afterPath="$PROJECT_DIR$/cmake-build-debug/googletest-src" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,18 +40,8 @@
       <file leaf-file-name="parser.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="2214">
               <caret line="123" column="14" lean-forward="false" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownloadProject.cmake" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DownloadProject.cmake">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1765">
-              <caret line="174" column="27" lean-forward="false" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -104,21 +50,9 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#36#63#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,7 +82,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="717" />
     <option name="y" value="25" />
     <option name="width" value="651" />
@@ -178,21 +112,6 @@
             <path>
               <item name="tina-lang" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="tina-lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tina-lang" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="tina-lang" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tina-lang" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="tina-lang" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tina-lang" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="tina-lang" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,17 +161,17 @@
       <workItem from="1551348551456" duration="13000" />
       <workItem from="1551348583509" duration="6366000" />
       <workItem from="1551406559931" duration="1976000" />
+      <workItem from="1551409982640" duration="646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8355000" />
+    <option name="totallyTimeSpent" value="9001000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="717" y="25" width="1301" height="743" extended-state="6" />
-    <editor active="true" />
+    <frame x="717" y="25" width="651" height="743" extended-state="4" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19907764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41474655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -262,7 +181,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -271,6 +190,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19907764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -295,55 +234,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2124">
-          <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+        <state relative-caret-position="2214">
+          <caret line="123" column="14" lean-forward="false" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DownloadProject.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3132">
-          <caret line="174" column="27" lean-forward="false" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#36#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/llvm/how_embedding_LLVM_to_your_project.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="289">
-            <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="144">
-            <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -357,43 +258,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/include/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="2124">
+          <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DownloadProject.cmake" />
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/llvm/how_embedding_LLVM_to_your_project.md" />
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/include/ast.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
           <folding>
-            <element signature="e#36#63#0" expanded="true" />
+            <element signature="e#86#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DownloadProject.CMakeLists.cmake.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/DownloadProject.CMakeLists.cmake.in" />
     <entry file="file://$PROJECT_DIR$/include/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="2214">
           <caret line="123" column="14" lean-forward="false" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DownloadProject.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1765">
-          <caret line="174" column="27" lean-forward="false" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DownloadProject.cmake" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding />
         </state>
       </provider>

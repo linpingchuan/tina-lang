@@ -1,6 +1,7 @@
 /opt/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lin/CLionProjects/tina-lang
 -- Found LLVM 5.0.2
 -- Using LLVMConfig.cmake in: /home/lin/llvm-build/lib/cmake/llvm
+-- 工程源代码路径: /home/lin/CLionProjects/tina-lang
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/lin/CLionProjects/tina-lang/cmake-build-debug

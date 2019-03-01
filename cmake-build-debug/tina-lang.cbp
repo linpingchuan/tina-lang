@@ -27,6 +27,16 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lin/CLionProjects/tina-lang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test">
+				<Option working_dir="/home/lin/CLionProjects/tina-lang/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lin/CLionProjects/tina-lang/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lin/CLionProjects/tina-lang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lin/CLionProjects/tina-lang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lin/CLionProjects/tina-lang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/lin/CLionProjects/tina-lang/cmake-build-debug"/>
 				<Option type="4"/>
@@ -46,6 +56,7 @@
 				<Compiler>
 					<Add directory="/home/lin/llvm/include"/>
 					<Add directory="/home/lin/llvm-build/include"/>
+					<Add directory="/home/lin/CLionProjects/tina-lang/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -71,6 +82,7 @@
 				<Compiler>
 					<Add directory="/home/lin/llvm/include"/>
 					<Add directory="/home/lin/llvm-build/include"/>
+					<Add directory="/home/lin/CLionProjects/tina-lang/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
