@@ -12,10 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab488a4-2644-467e-876b-42d60f34b0ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tina-lang.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/tina-lang.cbp" />
       <change beforePath="$PROJECT_DIR$/include/parser.h" afterPath="$PROJECT_DIR$/include/parser.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -44,8 +40,8 @@
       <file leaf-file-name="parser.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="-288">
+              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -66,6 +62,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ParseExpression</find>
+      <find>ParsePr</find>
+      <find>ParseDefinition</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +178,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10616000" />
+    <option name="totallyTimeSpent" value="13562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="717" y="25" width="651" height="743" extended-state="4" />
@@ -453,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        <state relative-caret-position="-288">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding />
         </state>
       </provider>

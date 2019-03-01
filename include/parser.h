@@ -10,9 +10,17 @@
 // 解析表达式 声明
 static ExprAst *ParseExpression();
 
-static int gettok() {
-    return -1;
-}
+// 解析函数原型 声明
+static PrototypeAst *ParsePrototype();
+
+// 解析括号运算符 声明
+static ExprAst *ParseParenExpr();
+
+// 数值常量语法树 声明
+static ExprAst *ParseNumberExpr();
+
+// 解析函数定义 声明
+static FunctionAst *ParseDefinition();
 
 // 辅助函数
 // 简单提供一个 token 缓冲区
@@ -21,6 +29,18 @@ static int gettok() {
 static int CurTok;
 static double NumVal;
 static std::string IdentifierStr;
+
+enum Token {
+    tok_eof = -1,
+    // 命令
+            tok_def = -2, tok_extern = -3,
+    // 主要的标识符
+            tok_identifier = -4, tok_number = -5
+};
+
+static int gettok() {
+    return -1;
+}
 
 static int getNextToken() {
     return CurTok = gettok();
@@ -112,10 +132,10 @@ static ExprAst *ParsePrimary() {
     switch (CurTok) {
         default:
             return Error("unknown token where expecting an expression");
-//        case tok_identifier:
-//            return ParseIdentifierExpr();
-//        case tok_number:
-//            return ParseNumberExpr();
+        case tok_identifier:
+            return ParseIdentifierExpr();
+        case tok_number:
+            return ParseNumberExpr();
         case '(':
             return ParseParenExpr();
     }
@@ -150,36 +170,112 @@ static void InitTokPrecedence() {
 
 // 解析有序对列表
 // RHS -> right hand side
-static ExprAst *ParseBinOpRHS(int ExprPrec,ExprAst *LHS){
-    while(true){
+static ExprAst *ParseBinOpRHS(int ExprPrec, ExprAst *LHS) {
+    while (true) {
         // 如果是二元操作符，找出他的优先级
-        int TokPrec=GetTokPrecedence();
+        int TokPrec = GetTokPrecedence();
 
         //
-        if(TokPrec<ExprPrec){
+        if (TokPrec < ExprPrec) {
             return LHS;
         }
 
-        int BinOp=CurTok;
+        int BinOp = CurTok;
         getNextToken(); // 丢掉二元操作符
 
         // 解析表达式
-        ExprAst *RHS=ParsePrimary();
-        if(!RHS){
+        ExprAst *RHS = ParsePrimary();
+        if (!RHS) {
             return nullptr;
         }
+
+        // 表达式的左侧与RHS的序列已经解析完毕
+        // 考虑表达式的次序：
+        // 1.(a + b) binop unparsed
+        // 2.a + (b binop unparsed)
+        // 预读 binop
+        // 查出优先级
+        // 与现在binop(本例中为 "+")的优先级相比较
+        int NextPrec = GetTokPrecedence();
+        if (TokPrec < NextPrec) {
+            RHS = ParseBinOpRHS(TokPrec + 1, RHS);
+            if (RHS == nullptr) {
+                return nullptr;
+            }
+        }
+        // 合并 LHS/RHS
+        LHS = new BinaryExprAst(BinOp, LHS, RHS);
+
     }
 }
 
 // 解析表达式
-static ExprAst *ParseExpression(){
-    ExprAst *LHS=ParsePrimary();
-    if(!LHS){
+static ExprAst *ParseExpression() {
+    ExprAst *LHS = ParsePrimary();
+    if (!LHS) {
         return nullptr;
     }
-    return ParseBinOpRHS(0,LHS);
+    return ParseBinOpRHS(0, LHS);
 }
 
+// 解析函数声明
+static PrototypeAst *ParsePrototype() {
+    if (CurTok != tok_identifier) {
+        return ErrorP("Expected function name in prototype");
+    }
 
+    std::string FnName = IdentifierStr;
+    getNextToken();
+
+    if (CurTok != '(') {
+        return ErrorP("Expected '(' in prototype");
+    }
+
+    std::vector<std::string> ArgNames;
+    while (getNextToken() == tok_identifier) {
+        ArgNames.push_back(IdentifierStr);
+    }
+
+    if (CurTok != ')') {
+        return ErrorP("Expected ')' in prototype");
+    }
+
+    // success
+    getNextToken(); // 丢掉 ')'
+
+    return new PrototypeAst(FnName, ArgNames);
+}
+
+// 解析函数定义
+static FunctionAst *ParseDefinition() {
+    getNextToken(); // 丢掉 def 关键词
+
+    PrototypeAst *Proto = ParsePrototype();
+    if (Proto == nullptr) {
+        return nullptr;
+    }
+    if (ExprAst *E = ParseExpression()) {
+        return new FunctionAst(Proto, E);
+    }
+    return nullptr;
+}
+
+// 解析 extern 关键字
+static PrototypeAst *ParseExtern() {
+    getNextToken(); // 丢掉 extern
+    return ParsePrototype();
+}
+
+// 允许用户在顶层输入任意表达式并求值
+// 该特性是通过一个特殊的匿名零元函数（没有任何参数的函数）实现的。
+// 所有顶层的表达式定义在该函数内
+static FunctionAst *ParseTopLevelExpr() {
+    if (ExprAst *E = ParseExpression()) {
+        // 创建匿名的原型
+        PrototypeAst *Proto = new PrototypeAst("", std::vector<std::string>());
+        return new FunctionAst(Proto, E);
+    }
+    return nullptr;
+}
 
 #endif //TINA_LANG_PARSER_H
