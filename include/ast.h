@@ -8,6 +8,9 @@
 #include <string>
 #include <vector>
 #include <llvm-c/Core.h>
+#include "parser.h"
+
+extern llvm::Value *ErrorV(const char *Str);
 
 // LLVM 用于存放代码片段中所有函数与全局变量的结构
 // 相当于 LLVM 的 IR 的顶层容器
@@ -30,7 +33,7 @@ public:
     // LLVM用 "Value" 类表示 ”静态一次性赋值 SSA(static single assignment)寄存器“
     // SSA 值最为突出的特点就在于”固定不变“： SSA值经由对应指令运算得出后便固定下来，直到该指令再次执行之前都不可修改
     // visitor 模式实现代码生成
-    virtual llvm::Value *Codegen()=0;
+    virtual llvm::Value *Codegen()= 0;
 };
 
 // 数字语法树
@@ -56,9 +59,12 @@ public:
     llvm::Value *Codegen();
 };
 
+// 在 LLVM IR内部，常量都只有一份，并且是共享的
 llvm::Value *VariableExprAst::Codegen() {
-    return nullptr;
+    llvm::Value *V = NameValues[Name];
+    return V ? V : ErrorV("Unknown variable name");
 }
+
 // 运算符表达式
 class BinaryExprAst : public ExprAst {
     char Op;
@@ -69,9 +75,28 @@ public:
     llvm::Value *Codegen();
 };
 
+//
 llvm::Value *BinaryExprAst::Codegen() {
-    return nullptr;
+    llvm::Value *L = LHS->Codegen();
+    llvm::Value *R = RHS->Codegen();
+    if (L == nullptr || R == nullptr) {
+        return nullptr;
+    }
+    switch (Op) {
+        case '+':
+            return Builder.CreateFAdd(L, R, "cmptmp");
+        case '-':
+            return Builder.CreateFSub(L, R, "subtmp");
+        case '*':
+            return Builder.CreateFMul(L, R, "multmp");
+        case '<':
+            L = Builder.CreateFCmpULT(L, R, "cmptmp");
+            return Builder.CreateUIToFP(L, llvm::Type::getDoubleTy(TheContext), "booltmp");
+        default:
+            return ErrorV("invalid binary operator");
+    }
 }
+
 // 函数名和用作参数的表达式
 class CallExprAst : public ExprAst {
     std::string Callee;
@@ -81,9 +106,11 @@ public:
 
     llvm::Value *Codegen();
 };
+
 llvm::Value *CallExprAst::Codegen() {
     return nullptr;
 }
+
 // 函数接口
 class PrototypeAst {
     std::string Name;

@@ -39,7 +39,7 @@ ExprAst *Error(const char *str);
 PrototypeAst *ErrorP(const char *str);
 
 // 用于报告代码生成过程中发生的错误
-static llvm::Value *ErrorV(const char *Str);
+llvm::Value *ErrorV(const char *Str);
 
 // 主循环
 static void MainLoop();
@@ -126,7 +126,7 @@ PrototypeAst *ErrorP(const char *str) {
 }
 
 // 用于报告代码生成过程中发生的错误
-static llvm::Value *ErrorV(const char *Str){
+llvm::Value *ErrorV(const char *Str){
     Error(Str);
     return nullptr;
 }
