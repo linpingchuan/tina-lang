@@ -23,10 +23,9 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 add_executable(tina-lang main.cpp include/ast.h include/parser.h)
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader)
+llvm_map_components_to_libnames(llvm_libs support core irreader executionengine interpreter
+        mc mcjit bitwriter x86codegen target)
 
 # Link against LLVM libraries
 target_link_libraries(tina-lang ${llvm_libs})
-# 链接二进制库
-target_link_libraries(tina-lang gtest gtest_main)
 

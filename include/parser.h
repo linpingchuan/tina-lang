@@ -32,6 +32,15 @@ static void HandleExtern();
 // 处理顶层表达式
 static void HandleTopLevelExpression();
 
+// 用于报错的辅助函数
+ExprAst *Error(const char *str);
+
+// 用于报告函数原型解析错误
+PrototypeAst *ErrorP(const char *str);
+
+// 用于报告代码生成过程中发生的错误
+static llvm::Value *ErrorV(const char *Str);
+
 // 主循环
 static void MainLoop();
 
@@ -110,8 +119,15 @@ ExprAst *Error(const char *str) {
     return nullptr;
 }
 
+// 用于报告函数原型解析错误
 PrototypeAst *ErrorP(const char *str) {
     Error(str);
+    return nullptr;
+}
+
+// 用于报告代码生成过程中发生的错误
+static llvm::Value *ErrorV(const char *Str){
+    Error(Str);
     return nullptr;
 }
 
