@@ -41,6 +41,9 @@ PrototypeAst *ErrorP(const char *str);
 // 用于报告代码生成过程中发生的错误
 llvm::Value *ErrorV(const char *Str);
 
+// 用于报告函数定义解析错误
+FunctionAst *ErrorF(const char *str);
+
 // 主循环
 static void MainLoop();
 
