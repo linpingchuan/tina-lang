@@ -64,7 +64,7 @@ public:
 
 // 在 LLVM IR内部，常量都只有一份，并且是共享的
 llvm::Value *VariableExprAst::Codegen() {
-    llvm::Value *V = NameValues[Name];
+    llvm::Value *V = NamedValues[Name];
     return V ? V : ErrorV("Unknown variable name");
 }
 
