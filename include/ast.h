@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <llvm-c/Core.h>
+#include <llvm/IR/LegacyPassManager.h>
 #include "parser.h"
 
 class FunctionAst;
@@ -25,6 +26,15 @@ static llvm::LLVMContext TheContext;
 static llvm::IRBuilder<> Builder(TheContext);
 // 该映射表用于记录定义于当前作用域内的变量与相对应的 LLVM 表示（就是代码的符号表）
 static std::map<std::string, llvm::Value *> NamedValues;
+// FunctionPassManager 会在适当时候优化跟更新 LLVM 的函数
+static std::unique_ptr<llvm::legacy::FunctionPassManager> TheFPM;
+
+static void InitializeModuleAndPassManager() {
+    // Create a new pass manager attached to it.
+    TheFPM = llvm::make_unique<llvm::legacy::FunctionPassManager>(TheModule);
+
+    TheFPM->doInitialization();
+}
 
 // 抽象语法树
 class ExprAst {
@@ -203,6 +213,7 @@ llvm::Function *FunctionAst::Codegen(){
     if(llvm::Value *RetVal=Body->Codegen()){
         Builder.CreateRet(RetVal);
 //        verifyFunction(*TheFunction);
+//        TheFPM->run
         return TheFunction;
     }
 }

@@ -18,7 +18,7 @@ int main(){
 //    std::cout<<msg<<std::endl;
 //    TheModule -> dump();
 
-    std::cout<<"hello world"<<std::endl;
+//    std::cout<<"hello world"<<std::endl;
 
     start_drive();
     return 0;

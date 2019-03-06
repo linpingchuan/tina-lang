@@ -28,4 +28,6 @@ llvm_map_components_to_libnames(llvm_libs support core irreader executionengine 
 
 # Link against LLVM libraries
 target_link_libraries(tina-lang ${llvm_libs})
+# 链接二进制库
+target_link_libraries(tina-lang gtest gtest_main)
 
