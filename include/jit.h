@@ -8,7 +8,8 @@
 #include "llvm/ExecutionEngine/JITSymbol.h"
 #include "llvm/ExecutionEngine/Orc/CompileUtils.h"
 #include "llvm/ExecutionEngine/Orc/ExecutionUtils.h"
-//#include "llvm/ExecutionEngine/Orc/Core.h"
+#include "llvm/ExecutionEngine/Orc/Core.h"
+#include "llvm-c/Core.h"
 #include "llvm/ExecutionEngine/Orc/IRCompileLayer.h"
 #include "llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h"
 #include "llvm/ExecutionEngine/SectionMemoryManager.h"
@@ -20,15 +21,15 @@ namespace tina{
     namespace orc{
         class Jit{
         private:
-//            llvm::orc::ExecutionSession ES;
+            llvm::orc::ExecutionSession ES;
             llvm::orc::RTDyldObjectLinkingLayer ObjectLayer;
             llvm::orc::IRCompileLayer CompileLayer;
             llvm::DataLayout DL;
-//            llvm::MangleAndInterner Mangle;
-//            llvm::ThreadSafeContext Ctx;
-//        public:
-//            Jit(llvm::JITTargetMachineBuilder JTMB,llvm::DataLayout DL):ObjectLayer(ES,[](){return llvm::make_unique<llvm::SectionMemoryManager>();}),
-//                                                                        CompileLayer(ES)
+            llvm::orc::MangleAndInterner Mangle;
+            llvm::orc::ThreadSafeContext Ctx;
+        public:
+            Jit(llvm::orc::JITTargetMachineBuilder JTMB,llvm::orc::DataLayout DL):ObjectLayer(ES,[](){return llvm::make_unique<llvm::orc::SectionMemoryManager>();}),
+                                                                        CompileLayer(ES){}
         };
     }
 }

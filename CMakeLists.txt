@@ -24,7 +24,7 @@ add_executable(tina-lang main.cpp include/ast.h include/parser.h include/jit.h)
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
 llvm_map_components_to_libnames(llvm_libs analysis asmparser binaryformat support core irreader tablegen xray executionengine interpreter
-        object objectyaml mc mcjit bitwriter x86codegen target orcjit passes linker option)
+        object objectyaml mc mcjit bitwriter x86codegen target orcjit passes linker option nativecodegen instcombine runtimedyld scalaropts transformutils native)
 
 # Link against LLVM libraries
 target_link_libraries(tina-lang ${llvm_libs})
