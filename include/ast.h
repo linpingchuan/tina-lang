@@ -29,12 +29,7 @@ static std::map<std::string, llvm::Value *> NamedValues;
 // FunctionPassManager 会在适当时候优化跟更新 LLVM 的函数
 static std::unique_ptr<llvm::legacy::FunctionPassManager> TheFPM;
 
-static void InitializeModuleAndPassManager() {
-    // Create a new pass manager attached to it.
-    TheFPM = llvm::make_unique<llvm::legacy::FunctionPassManager>(TheModule);
 
-    TheFPM->doInitialization();
-}
 
 // 抽象语法树
 class ExprAst {

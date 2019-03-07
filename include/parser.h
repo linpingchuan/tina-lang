@@ -32,6 +32,9 @@ static void HandleExtern();
 // 处理顶层表达式
 static void HandleTopLevelExpression();
 
+// 初始化 Pass 管理器
+static void InitializeModuleAndPassManager();
+
 // 用于报错的辅助函数
 ExprAst *Error(const char *str);
 
@@ -378,7 +381,12 @@ static void HandleExtern() {
 }
 
 static void HandleTopLevelExpression() {
-    if (ParseTopLevelExpr()) {
+    // 提取表达式到匿名函数中
+    if (auto FnAst=ParseTopLevelExpr()) {
+        if(FnAst->Codegen()){
+            InitializeModuleAndPassManager();
+
+        }
         fprintf(stderr, "Parsed a top-level expr\n");
     } else {
         getNextToken();
@@ -424,5 +432,12 @@ static int start_drive(){
     MainLoop();
 
     return 0;
+}
+
+static void InitializeModuleAndPassManager() {
+    // Create a new pass manager attached to it.
+    TheFPM = llvm::make_unique<llvm::legacy::FunctionPassManager>(TheModule);
+
+    TheFPM->doInitialization();
 }
 #endif //TINA_LANG_PARSER_H
