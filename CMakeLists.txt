@@ -4,8 +4,6 @@ project(tina-lang)
 # -------------------------------- gtest -------------------------------
 enable_testing()
 find_package(Threads)
-
-message(STATUS "googletest path: $ENV{GOOGLE_TEST}")
 # -------------------------------- gtest -------------------------------
 
 find_package(LLVM REQUIRED CONFIG)
@@ -37,5 +35,5 @@ llvm_map_components_to_libnames(llvm_libs analysis asmparser binaryformat suppor
 target_link_libraries(tina-lang ${llvm_libs})
 # 链接二进制库
 target_link_libraries(tina-lang gtest gtest_main)
-add_test(NAME tina-lang COMMAND tina-lang)
+add_test(NAME tina-lang-test COMMAND tina-lang-test)
 
