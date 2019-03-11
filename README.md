@@ -27,6 +27,7 @@
 - [自制玩具语言](https://gnuu.org/2009/09/18/writing-your-own-toy-compiler/)
 - [自制语言（rust）](https://blog.subnetzero.io/post/building-language-vm-part-00/)
 - [编写 Linux 调试器](https://blog.tartanllama.xyz/writing-a-linux-debugger-setup/)
+- [自制系列](https://github.com/danistefanovic/build-your-own-x)
 
 ## [TODO] 具体脚本语法....
 
