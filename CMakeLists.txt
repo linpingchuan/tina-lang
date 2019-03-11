@@ -1,17 +1,13 @@
 cmake_minimum_required(VERSION 3.9)
 project(tina-lang)
 
-# -------------------------------- gtest -------------------------------
-enable_testing()
-find_package(Threads)
-# -------------------------------- gtest -------------------------------
-
 find_package(LLVM REQUIRED CONFIG)
 
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
-set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_CXX_STANDARD 11)
 
 # Set your project compile flags.
 # E.g. if using the C++ header files
@@ -20,6 +16,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
+
 
 message(STATUS "工程源代码路径: ${PROJECT_SOURCE_DIR}")
 
@@ -33,7 +30,4 @@ llvm_map_components_to_libnames(llvm_libs analysis asmparser binaryformat suppor
 
 # Link against LLVM libraries
 target_link_libraries(tina-lang ${llvm_libs})
-# 链接二进制库
-target_link_libraries(tina-lang gtest gtest_main)
-add_test(NAME tina-lang-test COMMAND tina-lang-test)
 

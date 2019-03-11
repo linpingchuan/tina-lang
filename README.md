@@ -20,7 +20,8 @@
 - [如何将你的 LLVM 嵌入到你的项目中](./doc/llvm/how_embedding_LLVM_to_your_project.md)
 - [LLVM 入门项目教程](http://llvm.org/docs/tutorial/)
 - [LLVM 中文入门项目教程](https://llvm-tutorial-cn.readthedocs.io/en/latest/index.html)
-
+- [其他](./doc/etc/etc.md)
+- [谷歌测试框架](./doc/googletest/how_to_write_google_test.md)
 
 ## [TODO] 具体脚本语法....
 
