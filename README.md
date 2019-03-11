@@ -22,6 +22,10 @@
 - [LLVM 中文入门项目教程](https://llvm-tutorial-cn.readthedocs.io/en/latest/index.html)
 - [其他](./doc/etc/etc.md)
 - [谷歌测试框架](./doc/googletest/how_to_write_google_test.md)
+- [构建自己的数据库] (https://cstack.github.io/db_tutorial/)
+- [构建自己的容器](http://cesarvr.github.io/post/2018-05-22-create-containers/)
+- [自制玩具语言](https://gnuu.org/2009/09/18/writing-your-own-toy-compiler/)
+- [自制语言（rust）](https://blog.subnetzero.io/post/building-language-vm-part-00/)
 
 ## [TODO] 具体脚本语法....
 
