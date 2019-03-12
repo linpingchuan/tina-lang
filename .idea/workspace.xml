@@ -12,8 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab488a4-2644-467e-876b-42d60f34b0ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/include/db.h" afterPath="$PROJECT_DIR$/include/db.h" />
-      <change beforePath="$PROJECT_DIR$/lib/db.cpp" afterPath="$PROJECT_DIR$/lib/db.cpp" />
       <change beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="db.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/db.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+            <state relative-caret-position="625">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#84#103#0" expanded="true" />
               </folding>
@@ -42,8 +40,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="594">
+              <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
               <folding>
                 <element signature="e#36#63#0" expanded="true" />
               </folding>
@@ -99,8 +97,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/doc/llvm/how_embedding_LLVM_to_your_project.md" />
         <option value="$PROJECT_DIR$/lib/db.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/include/db.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -214,7 +212,7 @@
       <workItem from="1552033730375" duration="1030000" />
       <workItem from="1552034782301" duration="1493000" />
       <workItem from="1552036297143" duration="10675000" />
-      <workItem from="1552370353600" duration="4419000" />
+      <workItem from="1552370353600" duration="4495000" />
     </task>
     <servers />
   </component>
@@ -236,7 +234,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63150000" />
+    <option name="totallyTimeSpent" value="63226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -615,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/db.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+        <state relative-caret-position="625">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#84#103#0" expanded="true" />
           </folding>
@@ -625,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="594">
+          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
             <element signature="e#36#63#0" expanded="true" />
           </folding>
