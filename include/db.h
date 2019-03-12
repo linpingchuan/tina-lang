@@ -11,15 +11,17 @@ namespace tina {
     namespace db {
         class Engine {
         public:
-            virtual Engine *start();
+            virtual Engine *start()=0;
         };
 
-        class TinaEngine {
+        class TinaEngine :public Engine{
         public:
             // 初始化资源
-            TinaEngine(){}
+            TinaEngine() {}
+
             // 清除资源
-            ~TinaEngine(){}
+            ~TinaEngine() {}
+
             // 启动 tina engine
             Engine *start();
         };

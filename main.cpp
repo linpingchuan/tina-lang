@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 //    ::testing::InitGoogleTest( &argc, argv );
 //
 //    return RUN_ALL_TESTS();
-    tina::db::TinaEngine *engine = new tina::db::TinaEngine();
+    tina::db::Engine *engine = new tina::db::TinaEngine();
     engine->start();
     return 0;
 }
