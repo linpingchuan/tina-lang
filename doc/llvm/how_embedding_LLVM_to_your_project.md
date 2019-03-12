@@ -1,5 +1,11 @@
 # 如何将 LLVM 嵌套到你的项目中去
 
+## 安装llvm
+```shell
+cmake ../llvm/ -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_BUILD_TESTS=False 
+``` 
+
+
 > 本项目使用 cmake 构建项目
 
 > IDE 为 clion
