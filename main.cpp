@@ -5,6 +5,7 @@
 #include "llvm/IR/IRBuilder.h"
 #include <iostream>
 #include <db.h>
+#include <common.h>
 #include "include/parser.h"
 
 //static llvm::LLVMContext TheContext;
@@ -26,9 +27,9 @@ int main(int argc, char **argv) {
 //    ::testing::InitGoogleTest( &argc, argv );
 //
 //    return RUN_ALL_TESTS();
-    tina::db::Engine *engine = new tina::db::TinaEngine();
-    engine->start();
-    engine=nullptr;
-    delete engine;
+
+    tina::db::run(nullptr);
+
+    tina::db::stop();
     return 0;
 }

@@ -68,8 +68,7 @@ namespace tina {
 
             // 清除资源
             ~TinaEngine() {
-                std::cout<<"bye"<<std::endl;
-                delete context;
+                this->bye();
             }
 
             // 启动 tina engine
@@ -77,7 +76,6 @@ namespace tina {
 
             void bye();
         };
-
 
 
     }

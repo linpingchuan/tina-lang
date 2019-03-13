@@ -10,15 +10,16 @@ tina::db::Engine *tina::db::TinaEngine::start() {
 }
 
 void tina::db::TinaEngine::bye() {
-    std::cout<<"Bye..."<<std::endl;
+    delete this->context;
+    std::cout << "Bye..." << std::endl;
 
 }
 
 tina::db::Context *tina::db::TinaContext::initial() {
-    std::cout<<"Hello, Entering tina context..."<<std::endl;
+    std::cout << "Hello, Entering tina context..." << std::endl;
     return this;
 }
 
 void tina::db::TinaContext::destroy() {
-    std::cout<<"Bye..."<<std::endl;
+    std::cout << "Bye from tina context..." << std::endl;
 }
