@@ -39,10 +39,11 @@ namespace tina {
         }
 
         static void show_version() {
-            std::string show_version = "Tina version " + tina_version + " 2019-3-13 16:11:23\n"
+            std::string show_version = "\nTina version " + tina_version + " 2019-3-13 16:11:23\n"
                     "Enter \".help\" for usage hints.\n"
                     "Connected to a transient database.\n"
                     "\".open\" FILENAME to reopen on a persisent database.\n";
+            LOG(INFO) << show_version;
             std::cout << show_version << std::endl;
         }
     }
