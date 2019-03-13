@@ -13,14 +13,13 @@
 
 namespace tina {
     namespace db {
-        static std::string tina_version = "0.0.1";
+
         static tina::db::TinaEngine *engine;
 
         static void run(std::string &strs);
 
         static void stop();
 
-        static void show_version();
 
         static void run(std::string &strs) {
             google::InitGoogleLogging("Tina");
@@ -31,21 +30,14 @@ namespace tina {
             engine = new tina::db::TinaEngine();
             engine->start();
 
-            show_version();
+            tina::db::TinaEngine::show_version();
         }
 
         static void stop() {
             delete engine;
         }
 
-        static void show_version() {
-            std::string show_version = "\nTina version " + tina_version + " 2019-3-13 16:11:23\n"
-                    "Enter \".help\" for usage hints.\n"
-                    "Connected to a transient database.\n"
-                    "\".open\" FILENAME to reopen on a persisent database.\n";
-            LOG(INFO) << show_version;
-            std::cout << show_version << std::endl;
-        }
+
     }
 }
 #endif //TINA_LANG_COMMON_H

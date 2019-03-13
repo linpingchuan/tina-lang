@@ -4,6 +4,7 @@
 
 #ifndef TINA_LANG_DB_H
 #define TINA_LANG_DB_H
+
 #include <map>
 
 namespace tina {
@@ -51,6 +52,8 @@ namespace tina {
         public:
             virtual Engine *start()=0;
 
+            virtual Engine *parse()=0;
+
             virtual void bye()=0;
 
         protected:
@@ -72,7 +75,15 @@ namespace tina {
             // 启动 tina engine
             Engine *start();
 
+            Engine *parse();
+
             void bye();
+
+            static std::string *show_version();
+
+
+        protected:
+            static std::string tina_version;
         };
 
 
