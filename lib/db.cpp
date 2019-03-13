@@ -2,24 +2,25 @@
 // Created by lin on 19-3-12.
 //
 #include <db.h>
+#include <glog/logging.h>
 
 // 启动 tina engine
 tina::db::Engine *tina::db::TinaEngine::start() {
-    std::cout << "Hello,I am Tina..." << std::endl;
+    LOG(INFO) << "Hello,I'm starting work now";
     return this;
 }
 
 void tina::db::TinaEngine::bye() {
     delete this->context;
-    std::cout << "Bye..." << std::endl;
+    LOG(INFO) << "Bye...";
 
 }
 
 tina::db::Context *tina::db::TinaContext::initial() {
-    std::cout << "Hello, Entering tina context..." << std::endl;
+    LOG(INFO) << "Hello, Entering tina context...";
     return this;
 }
 
 void tina::db::TinaContext::destroy() {
-    std::cout << "Bye from tina context..." << std::endl;
+    LOG(INFO) << "Bye from tina context...";
 }

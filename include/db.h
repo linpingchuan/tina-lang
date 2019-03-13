@@ -4,8 +4,6 @@
 
 #ifndef TINA_LANG_DB_H
 #define TINA_LANG_DB_H
-
-#include <iostream>
 #include <map>
 
 namespace tina {
