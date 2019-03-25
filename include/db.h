@@ -28,6 +28,16 @@ namespace tina {
             virtual void destroy()=0;
         };
 
+        class Command {
+        public:
+            Command(std::string &command) : command(&command) {}
+
+
+        private:
+            std::string *command;
+            int64_t length;
+        };
+
         class Value {
 
         };

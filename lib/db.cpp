@@ -4,6 +4,7 @@
 #include <db.h>
 #include <glog/logging.h>
 #include <iostream>
+#include <client.h>
 
 // 启动 tina engine
 tina::db::Engine *tina::db::TinaEngine::start() {
@@ -32,7 +33,9 @@ std::string *tina::db::TinaEngine::show_version() {
 }
 
 tina::db::Engine *tina::db::TinaEngine::parse() {
-    LOG(INFO) << "starting to parse from command";
+    client::InputBuffer *input_buffer = new client::InputBuffer();
+    input_buffer->print_prompt();
+    client::InputBuffer::read_input(*input_buffer);
     return this;
 }
 
