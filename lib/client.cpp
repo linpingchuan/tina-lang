@@ -19,11 +19,5 @@ void tina::db::client::InputBuffer::read_input(InputBuffer &input_buffer) {
     // Ignore trailing newline
     input_buffer.input_length = bytes_read - 1;
     input_buffer.buffer[bytes_read - 1] = 0;
-
-    if(strcmp(input_buffer.buffer,"exit")==0){
-        exit(EXIT_SUCCESS);
-    }else{
-        printf("Unrecognized command '%s'.\n",input_buffer.buffer);
-    }
 }
 

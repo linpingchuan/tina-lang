@@ -6,6 +6,7 @@
 #define TINA_LANG_DB_H
 
 #include <map>
+#include "client.h"
 
 namespace tina {
     namespace db {
@@ -19,6 +20,19 @@ namespace tina {
 
         class TinaContext;
 
+        namespace client{
+            class InputBuffer;
+        }
+        enum MetaCommandResult{
+            META_COMMAND_SUCCESS,
+            META_COMMAND_UNRECOGNIZED_COMMAND
+        };
+
+        enum MetaPrepareResult{
+            PREPARE_SUCCESS,
+            PREPARE_UNRECOGNIZED_STATEMENT
+        };
+
         class Context {
         public:
             Context() {}
@@ -26,6 +40,10 @@ namespace tina {
             virtual Context *initial()=0;
 
             virtual void destroy()=0;
+
+            friend class TinaEngine;
+        protected:
+            tina::db::client::InputBuffer *input_buffer;
         };
 
         class Command {
@@ -51,7 +69,6 @@ namespace tina {
             Context *initial();
 
             void destroy();
-
         protected:
             std::map<std::string, Value *> values;
         private:
@@ -87,6 +104,12 @@ namespace tina {
 
             Engine *parse();
 
+            MetaCommandResult dispatch_meta_command();
+
+            Engine *dispatch();
+
+            Engine *prepare_statement();
+
             void bye();
 
             static std::string *show_version();
@@ -95,6 +118,7 @@ namespace tina {
         protected:
             static std::string tina_version;
         };
+
 
 
     }
