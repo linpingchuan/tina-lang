@@ -26,6 +26,7 @@ namespace tina {
 
                 static void read_input(InputBuffer &input_buffer);
 
+
                 friend class tina::db::Context;
                 friend class tina::db::TinaEngine;
             private:

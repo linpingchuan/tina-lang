@@ -20,6 +20,7 @@ namespace tina {
 
         class TinaContext;
 
+        class Statement;
         namespace client{
             class InputBuffer;
         }
@@ -106,19 +107,30 @@ namespace tina {
 
             MetaCommandResult dispatch_meta_command();
 
+            MetaPrepareResult dispatch_prepare_command();
+
             Engine *dispatch();
 
             Engine *prepare_statement();
+
+            Engine *execute_statement();
 
             void bye();
 
             static std::string *show_version();
 
+            static std::string *show_happy();
 
         protected:
             static std::string tina_version;
         };
 
+        class Statement{
+        public:
+
+        private:
+
+        };
 
 
     }

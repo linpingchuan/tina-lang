@@ -4,7 +4,7 @@
 #include <db.h>
 #include <glog/logging.h>
 #include <iostream>
-#include <client.h>
+#include <csignal>
 
 // 启动 tina engine
 tina::db::Engine *tina::db::TinaEngine::start() {
@@ -30,6 +30,12 @@ std::string *tina::db::TinaEngine::show_version() {
     LOG(INFO) << show_version;
     std::cout << show_version << std::endl;
     return &TinaEngine::tina_version;
+}
+
+std::string *tina::db::TinaEngine::show_happy() {
+    std::string *show_happy = new std::string("I am love Tina :)");
+    std::cout << *show_happy << std::endl;
+    return show_happy;
 }
 
 tina::db::Engine *tina::db::TinaEngine::parse() {
@@ -66,18 +72,44 @@ tina::db::MetaCommandResult tina::db::TinaEngine::dispatch_meta_command() {
         exit(EXIT_SUCCESS);
     } else if (strcmp(buffer->buffer, ".version") == 0) {
         show_version();
+        return META_COMMAND_SUCCESS;
     } else if (strcmp(buffer->buffer, ".h") == 0 ||
                strcmp(buffer->buffer, ".help") == 0
             ) {
         show_version();
+        return META_COMMAND_SUCCESS;
+    } else if (strcmp(buffer->buffer, ".happy") == 0) {
+        show_happy();
+        return META_COMMAND_SUCCESS;
     } else {
         return META_COMMAND_UNRECOGNIZED_COMMAND;
     }
 
 }
 
+tina::db::MetaPrepareResult tina::db::TinaEngine::dispatch_prepare_command() {
+    return PREPARE_UNRECOGNIZED_STATEMENT;
+}
+
 tina::db::Engine *tina::db::TinaEngine::prepare_statement() {
+    auto buffer = context->input_buffer;
+    LOG(INFO) << "prepare statement: " << buffer->buffer << std::endl;
+    auto prepare_result = dispatch_prepare_command();
+    switch (prepare_result) {
+        case PREPARE_SUCCESS:
+            LOG(INFO) << "prepare statement success: " << buffer->buffer << std::endl;
+            execute_statement();
+            break;
+        case PREPARE_UNRECOGNIZED_STATEMENT:
+//            LOG(ERROR) << "prepare statement error: " << buffer->buffer << std::endl;
+            printf("Unrecognized keyword at start of '%s'.\n", buffer->buffer);
+            break;
+    }
     return this;
+}
+
+tina::db::Engine *tina::db::TinaEngine::execute_statement() {
+
 }
 
 void tina::db::TinaEngine::bye() {

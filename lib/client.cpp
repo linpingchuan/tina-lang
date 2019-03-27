@@ -4,6 +4,7 @@
 #include <client.h>
 #include <iostream>
 #include <cstring>
+#include <csignal>
 
 void tina::db::client::InputBuffer::print_prompt() {
     std::cout << "db > ";
@@ -20,4 +21,5 @@ void tina::db::client::InputBuffer::read_input(InputBuffer &input_buffer) {
     input_buffer.input_length = bytes_read - 1;
     input_buffer.buffer[bytes_read - 1] = 0;
 }
+
 
