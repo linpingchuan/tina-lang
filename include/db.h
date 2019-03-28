@@ -20,18 +20,31 @@ namespace tina {
 
         class TinaContext;
 
-        class Statement;
-        namespace client{
+        struct Statement;
+
+        struct Row;
+
+        namespace client {
             class InputBuffer;
         }
-        enum MetaCommandResult{
+        enum MetaCommandResult {
             META_COMMAND_SUCCESS,
             META_COMMAND_UNRECOGNIZED_COMMAND
         };
 
-        enum MetaPrepareResult{
+        enum MetaPrepareResult {
             PREPARE_SUCCESS,
-            PREPARE_UNRECOGNIZED_STATEMENT
+            PREPARE_UNRECOGNIZED_STATEMENT,
+            PREPARE_SYNTAX_ERROR
+        };
+
+        enum MetaExecuteResult {
+            EXECUTE_SUCCESS,
+            EXECUTE_UNRECOGNIZED_STATEMENT
+        };
+        enum StatementType {
+            STATEMENT_INSERT,
+            STATEMENT_SELECT
         };
 
         class Context {
@@ -43,8 +56,10 @@ namespace tina {
             virtual void destroy()=0;
 
             friend class TinaEngine;
+
         protected:
             tina::db::client::InputBuffer *input_buffer;
+            tina::db::Statement *statement;
         };
 
         class Command {
@@ -70,6 +85,7 @@ namespace tina {
             Context *initial();
 
             void destroy();
+
         protected:
             std::map<std::string, Value *> values;
         private:
@@ -109,6 +125,8 @@ namespace tina {
 
             MetaPrepareResult dispatch_prepare_command();
 
+            MetaExecuteResult dispatch_execute_command();
+
             Engine *dispatch();
 
             Engine *prepare_statement();
@@ -125,11 +143,17 @@ namespace tina {
             static std::string tina_version;
         };
 
-        class Statement{
-        public:
+        struct Row {
+            static const int64_t  COLUMN_SIZE=255;
+            char username[255];
+            char email[255];
+            int id;
+        };
 
-        private:
-
+        struct Statement {
+            StatementType type;
+            std::string statement;
+            Row *row;
         };
 
 

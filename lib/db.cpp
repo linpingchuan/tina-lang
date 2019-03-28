@@ -88,28 +88,89 @@ tina::db::MetaCommandResult tina::db::TinaEngine::dispatch_meta_command() {
 }
 
 tina::db::MetaPrepareResult tina::db::TinaEngine::dispatch_prepare_command() {
+    auto buffer = context->input_buffer;
+    context->statement = new Statement();
+    auto statement = context->statement;
+
+    if (strncmp(buffer->buffer, "insert", 6) == 0) {
+        statement->type = STATEMENT_INSERT;
+        statement->statement = buffer->buffer;
+        auto row = new Row();
+        statement->row = row;
+        int args_assigned = sscanf(statement->statement.data(),
+                                   "insert %d %s %s",
+                                   &(row->id),
+                                   row->username,
+                                   row->email);
+        if (args_assigned < 3) {
+            return PREPARE_SYNTAX_ERROR;
+        }
+        return PREPARE_SUCCESS;
+    } else if (strncmp(buffer->buffer, "select", 6) == 0) {
+        statement->type = STATEMENT_SELECT;
+        statement->statement = buffer->buffer;
+        return PREPARE_SUCCESS;
+    }
     return PREPARE_UNRECOGNIZED_STATEMENT;
 }
 
 tina::db::Engine *tina::db::TinaEngine::prepare_statement() {
     auto buffer = context->input_buffer;
+    auto statement = context->statement;
     LOG(INFO) << "prepare statement: " << buffer->buffer << std::endl;
     auto prepare_result = dispatch_prepare_command();
     switch (prepare_result) {
+        case PREPARE_SYNTAX_ERROR:
+            printf("prepare statement syntax error: %s", statement->statement.data());
+            break;
         case PREPARE_SUCCESS:
             LOG(INFO) << "prepare statement success: " << buffer->buffer << std::endl;
             execute_statement();
             break;
         case PREPARE_UNRECOGNIZED_STATEMENT:
-//            LOG(ERROR) << "prepare statement error: " << buffer->buffer << std::endl;
             printf("Unrecognized keyword at start of '%s'.\n", buffer->buffer);
             break;
     }
     return this;
 }
 
-tina::db::Engine *tina::db::TinaEngine::execute_statement() {
+tina::db::MetaExecuteResult tina::db::TinaEngine::dispatch_execute_command() {
+    auto statement = context->statement;
+    switch (statement->type) {
+        case STATEMENT_SELECT:
+            LOG(INFO) << "select statement: " << statement->statement
+                      << "(TYPE: "
+                      << statement->type
+                      << ")"
+                      << std::endl;
+            return EXECUTE_SUCCESS;
+        case STATEMENT_INSERT:
+            LOG(INFO) << "insert statement: " << statement->statement
+                      << "(TYPE: "
+                      << statement->type
+                      << ")"
+                      << std::endl;
+            auto row = statement->row;
+            LOG(INFO) << "row: " << row->id << " " << row->email << " " << row->username << std::endl;
+            return EXECUTE_SUCCESS;
+    }
+    return EXECUTE_UNRECOGNIZED_STATEMENT;
 
+}
+
+tina::db::Engine *tina::db::TinaEngine::execute_statement() {
+    auto statement = context->statement;
+    auto buffer = context->input_buffer;
+
+    auto execute_result = dispatch_execute_command();
+    switch (execute_result) {
+        case EXECUTE_SUCCESS:
+            std::cout << "This is where we would do an execute successfully." << std::endl;
+            break;
+        case EXECUTE_UNRECOGNIZED_STATEMENT:
+            printf("Unrecognized execute statement: %s\n", buffer->buffer);
+            break;
+    }
 }
 
 void tina::db::TinaEngine::bye() {
