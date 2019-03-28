@@ -7,6 +7,7 @@
 
 #include <map>
 #include "client.h"
+#include <vector>
 
 namespace tina {
     namespace db {
@@ -23,6 +24,8 @@ namespace tina {
         struct Statement;
 
         struct Row;
+
+        struct Table;
 
         namespace client {
             class InputBuffer;
@@ -94,7 +97,7 @@ namespace tina {
 
         class Engine {
         public:
-            Engine() : context(new TinaContext()) {}
+            Engine() : context(new TinaContext()), table(new Table()) {}
 
             virtual Engine *start()=0;
 
@@ -103,7 +106,8 @@ namespace tina {
             virtual void bye()=0;
 
         protected:
-            db::Context *context;
+            Context *context;
+            Table *table;
         };
 
         class TinaEngine : public Engine {
@@ -149,9 +153,13 @@ namespace tina {
 
         struct Row {
             static const int64_t COLUMN_SIZE = 255;
-            char username[255];
-            char email[255];
+            char username[COLUMN_SIZE];
+            char email[COLUMN_SIZE];
             int id;
+        };
+
+        struct Table {
+            std::vector<Row *> *rows;
         };
 
         struct Statement {

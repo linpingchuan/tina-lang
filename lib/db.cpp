@@ -11,14 +11,12 @@ tina::db::Engine *tina::db::TinaEngine::start() {
     LOG(INFO) << "Hello,I'm starting work now";
     while (true) {
         signal(SIGINT, TinaEngine::stop);
+        signal(SIGABRT, TinaEngine::stop);
         // find a string
         parse();
         // trying to dispatcher
         dispatch();
-        // exit / ctrl + D
-
     }
-    return this;
 }
 
 std::string tina::db::TinaEngine::tina_version = "0.0.1";
