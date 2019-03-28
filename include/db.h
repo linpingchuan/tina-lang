@@ -49,7 +49,7 @@ namespace tina {
 
         class Context {
         public:
-            Context() {}
+            Context() : input_buffer(nullptr), statement(nullptr) {};
 
             virtual Context *initial()=0;
 
@@ -82,9 +82,9 @@ namespace tina {
 
             ~TinaContext() { this->destroy(); }
 
-            Context *initial();
+            Context *initial() override;
 
-            void destroy();
+            void destroy() override;
 
         protected:
             std::map<std::string, Value *> values;
@@ -94,6 +94,8 @@ namespace tina {
 
         class Engine {
         public:
+            Engine() : context(new TinaContext()) {}
+
             virtual Engine *start()=0;
 
             virtual Engine *parse()=0;
@@ -117,9 +119,9 @@ namespace tina {
             }
 
             // 启动 tina engine
-            Engine *start();
+            Engine *start() override;
 
-            Engine *parse();
+            Engine *parse() override;
 
             MetaCommandResult dispatch_meta_command();
 
@@ -133,7 +135,7 @@ namespace tina {
 
             Engine *execute_statement();
 
-            void bye();
+            void bye() override;
 
             static std::string *show_version();
 
@@ -144,7 +146,7 @@ namespace tina {
         };
 
         struct Row {
-            static const int64_t  COLUMN_SIZE=255;
+            static const int64_t COLUMN_SIZE = 255;
             char username[255];
             char email[255];
             int id;

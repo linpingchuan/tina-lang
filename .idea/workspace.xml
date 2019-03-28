@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aab488a4-2644-467e-876b-42d60f34b0ae" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/include/db.h" afterPath="$PROJECT_DIR$/include/db.h" />
-      <change beforePath="$PROJECT_DIR$/lib/db.cpp" afterPath="$PROJECT_DIR$/lib/db.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="db.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/db.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="153" column="31" lean-forward="true" selection-start-line="153" selection-start-column="31" selection-end-line="153" selection-end-column="31" />
+            <state relative-caret-position="212">
+              <caret line="62" column="10" lean-forward="true" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
               <folding>
                 <element signature="e#84#98#0" expanded="true" />
               </folding>
@@ -104,8 +103,8 @@
         <option value="$PROJECT_DIR$/include/common.h" />
         <option value="$PROJECT_DIR$/include/client.h" />
         <option value="$PROJECT_DIR$/lib/client.cpp" />
-        <option value="$PROJECT_DIR$/include/db.h" />
         <option value="$PROJECT_DIR$/lib/db.cpp" />
+        <option value="$PROJECT_DIR$/include/db.h" />
       </list>
     </option>
   </component>
@@ -243,7 +242,7 @@
       <workItem from="1552036297143" duration="10675000" />
       <workItem from="1552370353600" duration="11957000" />
       <workItem from="1552470058290" duration="738000" />
-      <workItem from="1553137028374" duration="22255000" />
+      <workItem from="1553137028374" duration="22482000" />
     </task>
     <servers />
   </component>
@@ -265,7 +264,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93681000" />
+    <option name="totallyTimeSpent" value="93908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -654,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/db.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="153" column="31" lean-forward="true" selection-start-line="153" selection-start-column="31" selection-end-line="153" selection-end-column="31" />
+        <state relative-caret-position="212">
+          <caret line="62" column="10" lean-forward="true" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
           <folding>
             <element signature="e#84#98#0" expanded="true" />
           </folding>
