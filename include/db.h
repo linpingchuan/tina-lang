@@ -43,6 +43,7 @@ namespace tina {
 
         enum MetaExecuteResult {
             EXECUTE_SUCCESS,
+            SELECT_SUCCESS,
             EXECUTE_UNRECOGNIZED_STATEMENT
         };
         enum StatementType {
@@ -91,13 +92,20 @@ namespace tina {
 
         protected:
             std::map<std::string, Value *> values;
+
         private:
 
         };
 
+        struct Table {
+            std::vector<Row *> *rows;
+        };
+
         class Engine {
         public:
-            Engine() : context(new TinaContext()), table(new Table()) {}
+            Engine() : context(new TinaContext()), table(new Table()) {
+                table->rows = new std::vector<Row *>();
+            }
 
             virtual Engine *start()=0;
 
@@ -158,9 +166,6 @@ namespace tina {
             int id;
         };
 
-        struct Table {
-            std::vector<Row *> *rows;
-        };
 
         struct Statement {
             StatementType type;

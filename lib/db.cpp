@@ -149,7 +149,10 @@ tina::db::MetaExecuteResult tina::db::TinaEngine::dispatch_execute_command() {
                       << statement->type
                       << ")"
                       << std::endl;
-            return EXECUTE_SUCCESS;
+            for (auto row:*table->rows) {
+                printf("%d %s %s\n", row->id, row->username, row->email);
+            }
+            return SELECT_SUCCESS;
         case STATEMENT_INSERT:
             LOG(INFO) << "insert statement: " << statement->statement
                       << "(TYPE: "
@@ -157,7 +160,9 @@ tina::db::MetaExecuteResult tina::db::TinaEngine::dispatch_execute_command() {
                       << ")"
                       << std::endl;
             auto row = statement->row;
+            table->rows->push_back(row);
             LOG(INFO) << "row: " << row->id << " " << row->email << " " << row->username << std::endl;
+
             return EXECUTE_SUCCESS;
     }
     return EXECUTE_UNRECOGNIZED_STATEMENT;
@@ -170,6 +175,8 @@ tina::db::Engine *tina::db::TinaEngine::execute_statement() {
 
     auto execute_result = dispatch_execute_command();
     switch (execute_result) {
+        case SELECT_SUCCESS:
+            break;
         case EXECUTE_SUCCESS:
             std::cout << "This is where we would do an execute successfully." << std::endl;
             break;
