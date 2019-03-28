@@ -137,6 +137,8 @@ namespace tina {
 
             void bye() override;
 
+            static void stop(int signal);
+
             static std::string *show_version();
 
             static std::string *show_happy();

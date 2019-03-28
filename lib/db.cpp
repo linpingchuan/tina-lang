@@ -10,6 +10,7 @@
 tina::db::Engine *tina::db::TinaEngine::start() {
     LOG(INFO) << "Hello,I'm starting work now";
     while (true) {
+        signal(SIGINT, TinaEngine::stop);
         // find a string
         parse();
         // trying to dispatcher
@@ -30,6 +31,11 @@ std::string *tina::db::TinaEngine::show_version() {
     LOG(INFO) << show_version;
     std::cout << show_version << std::endl;
     return &TinaEngine::tina_version;
+}
+
+void tina::db::TinaEngine::stop(int signal) {
+    std::cout << std::endl;
+    exit(EXIT_SUCCESS);
 }
 
 std::string *tina::db::TinaEngine::show_happy() {
@@ -59,6 +65,8 @@ tina::db::Engine *tina::db::TinaEngine::dispatch() {
                 printf("Unrecognized meta command '%s',type '.h' or '.help' get more usages\n", buffer->buffer);
                 break;
         }
+    } else if (buffer->buffer[0] == '\n') {
+        // pass
     } else {
         prepare_statement();
     }
