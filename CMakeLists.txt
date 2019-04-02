@@ -30,5 +30,5 @@ llvm_map_components_to_libnames(llvm_libs analysis asmparser binaryformat suppor
 
 # Link against LLVM libraries
 target_link_libraries(tina-lang ${llvm_libs})
-target_link_libraries(tina-lang glog pthread gflags)
+target_link_libraries(tina-lang glog pthread gflags boost_thread)
 

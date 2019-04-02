@@ -189,7 +189,6 @@ tina::db::Engine *tina::db::TinaEngine::execute_statement() {
 void tina::db::TinaEngine::bye() {
     delete this->context;
     LOG(INFO) << "Bye...";
-
 }
 
 tina::db::Context *tina::db::TinaContext::initial() {
