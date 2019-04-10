@@ -38,7 +38,8 @@ namespace tina {
         enum MetaPrepareResult {
             PREPARE_SUCCESS,
             PREPARE_UNRECOGNIZED_STATEMENT,
-            PREPARE_SYNTAX_ERROR
+            PREPARE_SYNTAX_ERROR,
+            PREPARE_STRING_TOO_LONG
         };
 
         enum MetaExecuteResult {
@@ -137,6 +138,8 @@ namespace tina {
 
             MetaCommandResult dispatch_meta_command();
 
+            MetaPrepareResult dispatch_insert_command(client::InputBuffer *buffer,Statement *statement);
+
             MetaPrepareResult dispatch_prepare_command();
 
             MetaExecuteResult dispatch_execute_command();
@@ -160,7 +163,7 @@ namespace tina {
         };
 
         struct Row {
-            static const int64_t COLUMN_SIZE = 255;
+            static const int64_t COLUMN_SIZE = 5;
             char username[COLUMN_SIZE];
             char email[COLUMN_SIZE];
             int id;

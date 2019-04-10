@@ -93,6 +93,33 @@ tina::db::MetaCommandResult tina::db::TinaEngine::dispatch_meta_command() {
 
 }
 
+tina::db::MetaPrepareResult tina::db::TinaEngine::dispatch_insert_command(client::InputBuffer *buffer, Statement *statement) {
+    statement->statement = buffer->buffer;
+    auto row = new Row();
+    statement->row = row;
+    char *keyword = strtok(buffer->buffer, " ");
+    char *id_string = strtok(nullptr, " ");
+    char *username = strtok(nullptr, " ");
+    char *email = strtok(nullptr, " ");
+
+    if (id_string == nullptr || username == nullptr || email == nullptr) {
+        return PREPARE_SYNTAX_ERROR;
+    }
+    int id = atoi(id_string);
+    if (strlen(username) > Row::COLUMN_SIZE) {
+        return PREPARE_STRING_TOO_LONG;
+    }
+    if (strlen(email) > Row::COLUMN_SIZE) {
+        return PREPARE_STRING_TOO_LONG;
+    }
+
+    statement->row->id = id;
+    strcpy(statement->row->username, username);
+    strcpy(statement->row->email, email);
+
+    return PREPARE_SUCCESS;
+}
+
 tina::db::MetaPrepareResult tina::db::TinaEngine::dispatch_prepare_command() {
     auto buffer = context->input_buffer;
     context->statement = new Statement();
@@ -100,18 +127,7 @@ tina::db::MetaPrepareResult tina::db::TinaEngine::dispatch_prepare_command() {
 
     if (strncmp(buffer->buffer, "insert", 6) == 0) {
         statement->type = STATEMENT_INSERT;
-        statement->statement = buffer->buffer;
-        auto row = new Row();
-        statement->row = row;
-        int args_assigned = sscanf(statement->statement.data(),
-                                   "insert %d %s %s",
-                                   &(row->id),
-                                   row->username,
-                                   row->email);
-        if (args_assigned < 3) {
-            return PREPARE_SYNTAX_ERROR;
-        }
-        return PREPARE_SUCCESS;
+        return dispatch_insert_command(buffer, statement);
     } else if (strncmp(buffer->buffer, "select", 6) == 0) {
         statement->type = STATEMENT_SELECT;
         statement->statement = buffer->buffer;
@@ -136,6 +152,9 @@ tina::db::Engine *tina::db::TinaEngine::prepare_statement() {
         case PREPARE_UNRECOGNIZED_STATEMENT:
             printf("Unrecognized keyword at start of '%s'.\n", buffer->buffer);
             break;
+        case PREPARE_STRING_TOO_LONG:
+            printf("String is too long.\n");
+            break;
     }
     return this;
 }
@@ -149,6 +168,7 @@ tina::db::MetaExecuteResult tina::db::TinaEngine::dispatch_execute_command() {
                       << statement->type
                       << ")"
                       << std::endl;
+            printf("id username email\n");
             for (auto row:*table->rows) {
                 printf("%d %s %s\n", row->id, row->username, row->email);
             }
